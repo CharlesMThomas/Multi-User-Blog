@@ -9,6 +9,7 @@ Description: A basic blog complete with user authentication and permissions. Cod
 **Run App Remotely**
 - Open https://inlaid-span-160415.appspot.com/ in your web browser to view the app.
 - Use the guest and registered instructions below in order to utilize the blog's features.
+
 *No installation of dependencies or third party libraries are required to run the application remotely.*
 
 **Run App Locally**
