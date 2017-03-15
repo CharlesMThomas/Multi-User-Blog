@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h3>Edit Post</h3>
+
+  <form method="post">
+    <div class="form-group">
+      <label>Title</label>
+      <input class="form-control" type="text" name="subject" value="{{subject}}">
+    </div>
+
+    <div  class="form-group">
+      <label>Blog</label>
+      <textarea class="form-control" name="content" rows="12" >{{content}}</textarea>
+    </div>
+
+    <div class="error">{{error}}</div>
+
+    <input class="btn btn-default" type="submit">
+  </form>
+
+  <a href="{{ '/%s' % post_id }}"><button class="btn btn-default">Cancel Edit</button></a>
+
+{% endblock %}

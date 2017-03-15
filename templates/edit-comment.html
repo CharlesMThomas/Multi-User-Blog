@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h1>Edit Comment</h1>
+
+  <form method="post">
+    <div class="form-group">
+      <label>Comment</label>
+      <textarea class="form-control" name="content" rows="12">{{content}}</textarea>
+    </div>
+
+    <div class="error">{{error}}</div>
+
+    <input class="btn btn-default" type="submit">
+  </form>
+  <a href="{{ '/%s' % post_id }}"><button class="btn btn-default">Cancel Edit</button></a>
+
+{% endblock %}

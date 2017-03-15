@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  {% for post in posts %}
+    <article class="blog-post">
+      <div class="blog-header">
+        <div class="blog-title">
+          <a href="{{ '/%s' % post.key().id() }}"><h3>{{post.subject}}</h3></a>
+        </div>
+        <div class="blog-date">
+          {{post.created}}
+        </div>
+      </div>
+      <pre class="blog-content">
+        {{post.content | safe}}
+      </pre>
+      <a href="{{'/%s' % post.key().id()}}"><button class="btn btn-default">Read More >></button></a>
+    </article>
+  {% endfor %}
+
+{% endblock %}

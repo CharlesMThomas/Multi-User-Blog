@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <article>
+    <div class="blog-header">
+      <div class="blog-title">
+        <h3>{{post.subject}}</h3>
+      </div>
+      <div class="blog-date">
+        {{post.created}}
+      </div>
+      <div class="blog-author">
+        Post Author: {{post.username}}
+      </div>
+      <div class="likes">
+        Likes: {{likes}}
+      </div>
+    </div>
+    <pre class="post-content">
+      {{post.content | safe}}
+    </pre>
+
+    {% if username %}
+      <a href="{{ '/edit/%s' % post.key().id() }}"><button class="btn btn-default">Edit Post</button></a>
+      <a href="{{ '/delete/%s' % post.key().id() }}"><button class="btn btn-default">Delete Post</button></a>
+      {% if already_like %}
+        <a href="{{ '/unlike/%s' % post.key().id() }}"><button class="btn btn-default">Unlike Post</button></a>
+      {% else %}
+        <a href="{{ '/like/%s' % post.key().id() }}"><button class="btn btn-default">Like Post</button></a>
+      {% endif %}
+        <a href="{{ '/comment/new/%s' % post.key().id() }}"><button class="btn btn-default">Add Comment</button></a>
+    {% endif %}
+
+  </article>
+
+  <hr>
+
+  <h2> Comments </h2>
+
+  <div class="comments-wrapper">
+  {% for comment in comments %}
+    <div class="comments">
+      {{comment.content}}
+    </div>
+    {% if username %}
+      <a href="{{ '/comment/edit/%s' % comment.key().id() }}"><button class="btn btn-default">Edit Comment</button></a>
+      <a href="{{ '/comment/delete/%s' % comment.key().id() }}"><button class="btn btn-default">Delete Comment</button></a>
+    {% endif %}
+  {% endfor %}
+  </div>
+
+{% endblock %}

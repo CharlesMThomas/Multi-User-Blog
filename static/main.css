@@ -1,0 +1,72 @@
+body {
+  padding: 0 30px 50px;
+}
+
+h1,
+.new-post-link {
+  text-align: center;
+}
+
+article {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.error {
+  font-weight: bold;
+  color: red;
+  padding-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.blog-header {
+  width: 100%;
+  border-bottom: 2px solid #333;
+  margin-bottom: 10px;
+}
+
+.login-links {
+  padding-top: 15px;
+}
+
+.blog-content {
+  width: 100%;
+  max-height: 6.5em;
+  overflow-y: hidden;
+}
+
+pre {
+    background-color: #fff !important;
+    border: none !important;
+    white-space: pre-line;       /* Since CSS 2.1 */
+    white-space: -moz-pre-line;  /* Mozilla, since 1999 */
+    white-space: -pre-line;      /* Opera 4-6 */
+    white-space: -o-pre-line;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+a {
+  text-decoration: none;
+}
+
+.post-content {
+  width: 100%;
+}
+
+.blog-author {
+  display: inline;
+}
+
+.likes {
+  float: right;
+  display: inline;
+}
+
+.comments-wrapper {
+  padding-left: 50px;
+  padding-bottom: 20px;
+}
+
+.comments {
+  padding-bottom: 20px;
+}
